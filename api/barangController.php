@@ -16,7 +16,7 @@ $barang = new Barang($database);
 			$data=$barang->get($idBarang);
 			if(empty($data)) {
 				$response['status'] = 404;
-				$response['data'] = array('error' => 'Barang tidak ditemukan');	
+				$response['data'] = array('error' => 'Introuvable');	
 			}else{
 				$response['status'] = 200;
 				$response['data'] = $data;	
@@ -78,7 +78,7 @@ $barang = new Barang($database);
 		if(isset($url_array[1])){
 			$idBarang = $url_array[1];
 			// check if idBarang exist in database
-			$data=$barang->getBarang($idBarang);
+			$data=$barang->get($idBarang);
 			if(empty($data)) {
 				$response['status'] = 404;
 				$response['data'] = array('error' => 'Data tidak ditemukan');	
