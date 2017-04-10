@@ -1,0 +1,30 @@
+﻿
+<div class="row">
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+    <div class="col-md-8">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="bar in barang">
+                    <td>
+                        {{ bar.idBarang }}
+                    </td>
+                    <!--<td>
+                       <input type="checkbox" data-ng-model="order.isShipped" disabled="disabled">
+                    </td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+</div>

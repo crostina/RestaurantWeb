@@ -1,0 +1,94 @@
+﻿
+<div class="row">
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+    <div class="col-md-8">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>title</th>
+                    <th>description</th>
+                    <th>genre</th>
+                    <th>image</th>
+                    <th>director</th>
+                    <th>
+                       writer
+                    </th>
+                    <th>
+                        producer
+                    </th>
+                    <th>
+                        releaseDate
+                    </th>
+                    <th>
+                        rating
+                    </th>
+                    <th>
+                        trailerURI
+                    </th>
+                    <th>
+                       isAvailable
+                    </th>
+                    <th>
+                        numberOfStocks
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="order in orders">
+                    <td>
+                        {{ order.id }}
+                    </td>
+                    <td>
+                        {{ order.title }}
+                    </td>
+                    <td>
+                        {{ order.description }}
+                    </td>
+                    <td>
+                       {{order.genreId}} {{ order.genre }}
+                    </td>
+                    <td>
+                        <a class="pull-left" ng-href="#/movies/{{order.ID}}" title="View {{order.Title}} details">
+                            <img class="media-object" height="120" ng-src="{{'http://localhost:1487/Content/images/movies/'+order.Image}}" alt="" />
+                        </a>
+                        <!--{{ order.image }}-->
+                    </td>
+                    <td>
+                        {{ order.director }}
+                    </td>
+                    <td>
+                        {{ order.writer }}
+                    </td>
+                    <td>
+                        {{ order.producer }}
+                    </td>
+                    <td>
+                        {{ order.releaseDate }}
+                    </td>
+                    <td>
+                        {{ order.rating }}
+                    </td>
+                    <td>
+                        {{ order.trailerURI }}
+                    </td>
+                    <td>
+                        {{ order.isAvailable }}
+                    </td>
+                    <td>
+                        {{ order.numberOfStocks }}
+                    </td>
+                    <!--<td>
+                       <input type="checkbox" data-ng-model="order.isShipped" disabled="disabled">
+                    </td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+</div>
