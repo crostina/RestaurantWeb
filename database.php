@@ -2,10 +2,10 @@
 class Database{
  
     // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "db_rest";
-    private $username = "root";
-    private $password = "";
+    private $host = "mysql4.gear.host";
+    private $db_name = "resto";
+    private $username = "resto";
+    private $password = "Zj6C5q?!Tkq8";
     public $conn;
  
     // get the database connection

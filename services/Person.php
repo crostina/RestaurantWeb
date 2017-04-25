@@ -1,6 +1,6 @@
 <?php
-Class Barang {
-	public function __construct($db,$table_name="barang",$defaultOrdercolumn = "namaBarang",$idColumn = "idBarang"){
+Class Person {
+	public function __construct($db,$table_name="Person",$defaultOrdercolumn = "ID",$idColumn = "ID"){
 		$this->db = $db->getConnection();;
                 $this->table_name = $table_name;
                 $this->defaultOrdercolumn = $defaultOrdercolumn;
@@ -13,16 +13,16 @@ Class Barang {
     // public $sok;
     // public $hargabeli;
     // public $hargajual;
-	public function insertBarang($namaBarang, $kategori, $stok, $hargaBeli, $hargaJual){
-        $sql = "INSERT INTO barang (namaBarang, kategori, stok, hargaBeli, hargaJual) VALUES (?,?,?,?,?)";
+	public function insert($CIN, $FirstName, $LastName, $PhoneNumber, $Role,$IdEvaluation,$User_Name,$Password,$Email){
+        $sql = "INSERT INTO " . $this->table_name . " (CIN, FirstName, LastName, PhoneNumber, Role,IdEvaluation,User_Name,Password,Email) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $this->db->prepare($sql); 
-        $status = $stmt->execute(array($namaBarang, $kategori, $stok, $hargaBeli, $hargaJual));
+        $status = $stmt->execute(array($CIN, $FirstName, $LastName, $PhoneNumber, $Role,$IdEvaluation,$User_Name,$Password,$Email));
         return $status;
 	}
-	public function updateBarang($idBarang, $namaBarang, $kategori, $stok, $hargaBeli, $hargaJual){
-        $sql = "UPDATE barang SET namaBarang=?, kategori=?, stok=?, hargaBeli=?, hargaJual=? WHERE idBarang=?";
+	public function update($ID,$CIN, $FirstName, $LastName, $PhoneNumber, $Role,$IdEvaluation,$User_Name,$Password,$Email){
+        $sql = "UPDATE " . $this->table_name . " SET CIN= ?, FirstName= ?, LastName= ?, PhoneNumber= ?, Role= ?, IdEvaluation= ?, User_Name= ?, Password= ?, Email= ? WHERE " . $this->idColumn . "= ?";
         $stmt = $this->db->prepare($sql); 
-        $status = $stmt->execute(array($namaBarang, $kategori, $stok, $hargaBeli, $hargaJual, $idBarang));
+        $status = $stmt->execute(array($CIN, $FirstName, $LastName, $PhoneNumber, $Role,$IdEvaluation,$User_Name,$Password,$Email,$ID));
         return $status;
 	}
 
