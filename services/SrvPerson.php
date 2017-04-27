@@ -1,5 +1,5 @@
 <?php
-Class Person {
+Class SrvPerson {
 	public function __construct($db,$table_name="Person",$defaultOrdercolumn = "ID",$idColumn = "ID"){
 		$this->db = $db->getConnection();;
                 $this->table_name = $table_name;

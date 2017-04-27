@@ -80,7 +80,7 @@
     <!-- Load services -->
     <script src="app/services/authService.js?v=2"></script>
     <script src="app/services/ordersService.js?v=2"></script>
-        <script src="app/services/barangService.js?v=2"></script>
+        <script src="app/services/personService.js?v=2"></script>
 
     <!-- Load controllers -->
     <script src="app/controllers/indexController.js?v=2"></script>
@@ -88,7 +88,7 @@
     <script src="app/controllers/loginController.js?v=2"></script>
     <script src="app/controllers/signupController.js?v=2"></script>
     <script src="app/controllers/ordersController.js?v=2"></script>
-        <script src="app/controllers/barangController.js?v=2"></script>
+        <script src="app/controllers/personController.js?v=2"></script>
 
     <!-- Load custom filters -->
     <!-- Load custom directives -->

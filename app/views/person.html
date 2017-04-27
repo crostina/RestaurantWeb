@@ -12,9 +12,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr data-ng-repeat="bar in barang">
+                <tr ng-repeat="person in persons">
                     <td>
-                        {{ bar.idBarang }}
+                        {{ person.ID }}
+                    </td>   
+                     <td>
+                        {{ person.FirstName |uppercase }}
                     </td>
                     <!--<td>
                        <input type="checkbox" data-ng-model="order.isShipped" disabled="disabled">

@@ -67,6 +67,15 @@ array_shift($url_array); // 3rd = 'api'
 $action = $url_array[0];
 // get the method
 $method = $_SERVER['REQUEST_METHOD'];
+ $token = null;
+  $headers = apache_request_headers();
+  if(isset($headers['Authorization'])){
+    $matches = array();
+    preg_match('/Token token="(.*)"/', $headers['Authorization'], $matches);
+    if(isset($matches[1])){
+      $token = $matches[1];
+    }
+  } 
 require_once '../database.php';
 $database = new Database();
 // test for action and include controller
